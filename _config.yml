@@ -1,0 +1,9 @@
+name: 足球队主页
+description: 简介占位符
+baseurl: "/Tsinghua-University-Non-Athlete-Football-Team"
+url: ""
+
+# 开启球员特殊集合
+collections:
+  players:
+    output: true
