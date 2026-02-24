@@ -28,9 +28,30 @@
     {{ content }}
   </main>
 
-  <!-- 页脚 -->
-  <footer class="bg-gray-800 text-white text-center py-6 mt-12">
-    <p>&copy; 2026 清华大学男子足球二队. All rights reserved.</p>
+<!-- 底部联系方式与版权页脚 -->
+  <footer class="bg-gray-900 text-gray-300 py-8 mt-12 border-t-4 border-yellow-500 text-sm">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+      
+      <!-- 左侧：球队信息与版权 -->
+      <div class="text-center md:text-left">
+        <p class="font-bold text-white text-base tracking-widest mb-1">清华大学男子足球二队</p>
+        <p>&copy; 2026 All rights reserved.</p>
+      </div>
+
+      <!-- 右侧：联系方式与你的名字 -->
+      <div class="text-center md:text-right space-y-2">
+        <p class="text-gray-400">
+          网站维护：<span class="text-white font-medium">Siyuan Zhang</span>
+        </p>
+        <p class="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-2 sm:gap-4">
+          <!-- 邮箱联系 -->
+          <span class="hover:text-yellow-400 transition">
+            📧 <a href="mailto:zhang-sy24@mails.tsinghua.edu.cn">zhang-sy24@mails.tsinghua.edu.cn</a>
+          </span>
+        </p>
+      </div>
+
+    </div>
   </footer>
 
 </body>

@@ -2,10 +2,23 @@
 layout: default
 ---
 
-<!-- 1. 球队合照与口号 -->
-<div class="relative bg-cover bg-center h-[400px]" style="background-image: url('{{ site.baseurl }}/assets/images/home-image.jpg');">
-  <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
-    <h1 class="text-5xl text-white font-bold tracking-widest text-center">无体育，不清华<br><span class="text-2xl mt-4 block text-yellow-400">清华大学男子足球二队官方主页</span></h1>
+<!-- 1. 球队合照与口号 (自适应宽图版) -->
+<div class="relative w-full overflow-hidden bg-gray-900 flex items-center justify-center">
+  
+  <!-- 图片层：w-full h-auto 保证电脑端按原图比例展开 -->
+  <!-- min-h-[250px] 保证手机端高度够放文字；object-bottom 保证手机端裁剪时优先保留底部的人脸 -->
+  <img src="{{ site.baseurl }}/assets/images/team-photo.jpg" alt="清华男足二队合照" class="w-full h-auto min-h-[250px] object-cover object-bottom">
+  
+  <!-- 遮罩与文字层：绝对定位 (absolute) 覆盖在图片上 -->
+  <!-- bg-opacity-40 我把黑色遮罩稍微调透明了一点，让人脸更清晰 -->
+  <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center px-4">
+    
+    <!-- 响应式字体大小：手机端偏小(text-3xl)，电脑端变大(md:text-5xl) -->
+    <h1 class="text-3xl md:text-5xl text-white font-bold tracking-widest text-center drop-shadow-lg">
+      无体育，不清华
+      <span class="text-lg md:text-2xl mt-3 md:mt-4 block text-yellow-400 drop-shadow-md">清华大学男子足球二队官方主页</span>
+    </h1>
+    
   </div>
 </div>
 
