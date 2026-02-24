@@ -24,7 +24,7 @@ layout: default
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {% for post in site.posts limit:3 %}
       <a href="{{ post.url | prepend: site.baseurl }}" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition block">
-        <img src="{{ post.image | default: 'https://images.unsplash.com/photo-1431324155629-1a6d0a6eb434?w=500' }}" class="w-full h-48 object-cover">
+        <img src="{% if post.image %}{{ site.baseurl }}{{ post.image }}{% else %}https://images.unsplash.com/photo-1431324155629-1a6d0a6eb434?w=500{% endif %}" class="w-full h-48 object-cover">
         <div class="p-4">
           <p class="text-xs text-gray-400 mb-1">{{ post.date | date: "%Y-%m-%d" }}</p>
           <h3 class="font-bold text-lg mb-2 text-blue-900">{{ post.title }}</h3>
