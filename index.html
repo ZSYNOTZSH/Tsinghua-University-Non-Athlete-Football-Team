@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<!-- 1. 球队合照与口号 -->
+<div class="relative bg-cover bg-center h-[400px]" style="background-image: url('https://images.unsplash.com/photo-1518605368461-1ee7e163b827?q=80&w=1000&auto=format&fit=crop');">
+  <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
+    <h1 class="text-5xl text-white font-bold tracking-widest text-center">无体育，不清华<br><span class="text-2xl mt-4 block text-yellow-400">清华大学男子足球二队官方主页</span></h1>
+  </div>
+</div>
+
+<!-- 2. 简介部分 -->
+<section class="py-12 container mx-auto text-center px-4">
+  <h2 class="text-3xl font-bold mb-4">关于我们</h2>
+  <p class="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+    这里放入简介
+  </p>
+</section>
+
+<!-- 3. 最新 News 快讯 (自动拉取最新3条新闻) -->
+<section class="bg-gray-200 py-12">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8 text-center border-b-4 border-blue-900 w-32 pb-2 mx-auto">最新快讯</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {% for post in site.posts limit:3 %}
+      <a href="{{ post.url | prepend: site.baseurl }}" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition block">
+        <img src="{{ post.image | default: 'https://images.unsplash.com/photo-1431324155629-1a6d0a6eb434?w=500' }}" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-xs text-gray-400 mb-1">{{ post.date | date: "%Y-%m-%d" }}</p>
+          <h3 class="font-bold text-lg mb-2 text-blue-900">{{ post.title }}</h3>
+          <p class="text-gray-600 text-sm">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- 4. 广告位 -->
+<section class="py-12 container mx-auto text-center">
+  <p class="text-sm text-gray-400 mb-4">- 感谢赞助商大力支持 -</p>
+  <a href="#" target="_blank" class="inline-block hover:opacity-80 transition">
+    <!-- 这里放赞助商海报的链接 -->
+    <div class="bg-blue-100 text-blue-800 p-8 rounded-xl border-2 border-dashed border-blue-300 font-bold text-xl w-full max-w-4xl mx-auto">
+      广告位招租 / 赞助商 Logo 放置处
+    </div>
+  </a>
+</section>
