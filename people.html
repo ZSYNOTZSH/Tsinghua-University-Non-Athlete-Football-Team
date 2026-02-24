@@ -19,7 +19,7 @@ title: 球队阵容
       {% for player in site.players %}
         {% if player.semester == sem %}
         <a href="{{ player.url | prepend: site.baseurl }}" class="block bg-white rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition transform overflow-hidden text-center group">
-          <div class="aspect-[3/4] overflow-hidden bg-gray-100 flex justify-center items-center">
+          <div class="aspect-[1/1] overflow-hidden bg-gray-100 flex justify-center items-center">
             <img src="{% if player.image %}{{ site.baseurl }}{{ player.image }}{% else %}https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png{% endif %}" class="w-full h-full object-cover object-top group-hover:scale-110 transition duration-500">
           </div>
           <div class="p-4">
